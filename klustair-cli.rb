@@ -5,20 +5,20 @@
 class KlustairCli < Formula
   desc "Scan all images in your Kubernetes cluster with Trivy and check your configuration with Kubeaudit"
   homepage "https://github.com/klustair/klustair-cli"
-  version "0.0.1"
+  version "0.6.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/klustair/klustair-cli/releases/download/v0.0.1/klustair-cli_0.0.1_Darwin_x86_64.tar.gz"
-      sha256 "c72ef96b0cd1f2e071c9c7b1bfe0dff5495079966a7e652973d35f2030a84093"
+    if Hardware::CPU.arm?
+      url "https://github.com/klustair/klustair-cli/releases/download/v0.6.0/klustair-cli_0.6.0_Darwin_arm64.tar.gz"
+      sha256 "6a12fa24293b0c54156f153cd0980cff29208bfb87e3faef54b18d61164afe90"
 
       def install
         bin.install "klustair-cli"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/klustair/klustair-cli/releases/download/v0.0.1/klustair-cli_0.0.1_Darwin_arm64.tar.gz"
-      sha256 "cc9c169f28b439a390b074dbcf4c4173a0120ee8ecc4a52ae57fc2c9a8fb9f65"
+    if Hardware::CPU.intel?
+      url "https://github.com/klustair/klustair-cli/releases/download/v0.6.0/klustair-cli_0.6.0_Darwin_x86_64.tar.gz"
+      sha256 "18bcdda4b808ff27623a4f9dc9a4d64374f3b7376dd52ad58f485a2e125cfd00"
 
       def install
         bin.install "klustair-cli"
@@ -28,16 +28,16 @@ class KlustairCli < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/klustair/klustair-cli/releases/download/v0.0.1/klustair-cli_0.0.1_Linux_x86_64.tar.gz"
-      sha256 "6a22e5e9e8ffeb6feee6b6bd2e43f2d8d2db79a944da68c6239952a20e705e34"
+      url "https://github.com/klustair/klustair-cli/releases/download/v0.6.0/klustair-cli_0.6.0_Linux_x86_64.tar.gz"
+      sha256 "98fc8b6e5cdbd1f723bffb355df5e89356ff16b8b946a7b64a8c583f4977e4a1"
 
       def install
         bin.install "klustair-cli"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/klustair/klustair-cli/releases/download/v0.0.1/klustair-cli_0.0.1_Linux_arm64.tar.gz"
-      sha256 "7a8cb971fbb6d37b3febdd514d437cea245957262b10f3bb7cb5b7965176dac0"
+      url "https://github.com/klustair/klustair-cli/releases/download/v0.6.0/klustair-cli_0.6.0_Linux_arm64.tar.gz"
+      sha256 "c2ad1067f4b06400f20d2906a21b9a314402cfd3aebbbef49236c95b1be686c9"
 
       def install
         bin.install "klustair-cli"
