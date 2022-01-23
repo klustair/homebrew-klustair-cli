@@ -10,7 +10,7 @@ class KlustairCli < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/klustair/klustair-cli/releases/download/v0.6.0/klustair-cli_0.6.0_Darwin_arm64.tar.gz"
-      sha256 "076195e115dadbca1836215e551bb5fcbb19fdacddd8b7c868fdf391e03976e8"
+      sha256 "d2693da3ff93c35ec16a0f7e7d2d85318428593ebdc21ad67e3b02cf28db2857"
 
       def install
         bin.install "klustair-cli"
@@ -18,7 +18,7 @@ class KlustairCli < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/klustair/klustair-cli/releases/download/v0.6.0/klustair-cli_0.6.0_Darwin_x86_64.tar.gz"
-      sha256 "97ccf8938308c082bb0c8682129a47105bcc43236d97d0fd03f0d3b6a2bc75a0"
+      sha256 "94f6dddda791dc8351525954b4611c44a817a35015c76ab9e19f50c6d586ab68"
 
       def install
         bin.install "klustair-cli"
@@ -27,17 +27,17 @@ class KlustairCli < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/klustair/klustair-cli/releases/download/v0.6.0/klustair-cli_0.6.0_Linux_x86_64.tar.gz"
-      sha256 "30ed18f1388e61c89325e84e8fef309f55de07b2f119bc930e88af7730d149af"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/klustair/klustair-cli/releases/download/v0.6.0/klustair-cli_0.6.0_Linux_arm64.tar.gz"
+      sha256 "c1c78c9fc088a02ca411a72d1287981abde1a62a108541d77913378f5c943237"
 
       def install
         bin.install "klustair-cli"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/klustair/klustair-cli/releases/download/v0.6.0/klustair-cli_0.6.0_Linux_arm64.tar.gz"
-      sha256 "6dc35ccb99048433808b2be4fd295bf62cfe81f31c2b6eab3ac1c494a269c489"
+    if Hardware::CPU.intel?
+      url "https://github.com/klustair/klustair-cli/releases/download/v0.6.0/klustair-cli_0.6.0_Linux_x86_64.tar.gz"
+      sha256 "dd3da7c1b0e59d40274a35d233963894b5a4b356181d63e8cf98e0cf9d731c05"
 
       def install
         bin.install "klustair-cli"
